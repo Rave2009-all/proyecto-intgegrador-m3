@@ -7,59 +7,44 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "categorias")
+@Table(name = "Categorias")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nombre;
-    private String descripcion;
+    private Long ID_Categoria;
+    private String Nombre_Categoria;
 
-    // ===================
-    // Constructores
-    // ===================
     public Categoria() {
     }
 
-    public Categoria(String nombre, String descripcion) {
-        this(null, nombre, descripcion);
+    public Categoria(String nombre) {
+        this.ID_Categoria = null;
+        this.Nombre_Categoria = nombre;
     }
 
-    public Categoria(Long id, String nombre, String descripcion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
+    public Categoria(Long id, String nombre) {
+        this.ID_Categoria = id;
+        this.Nombre_Categoria = nombre;
     }
 
-    // ===================
-    // Getters y setters
-    // ===================
     public Long getId() {
-        return id;
+        return ID_Categoria;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.ID_Categoria = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCategoria() {
+        return Nombre_Categoria;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNombreCategoria(String nombre) {
+        this.Nombre_Categoria = nombre;
     }
 
     @Override
     public String toString() {
-        return "Categoria [id=" + id + ", nombre=" + nombre + "]";
+        return "Categoria [id=" + ID_Categoria + ", nombre=" + Nombre_Categoria + "]";
     }
 }
