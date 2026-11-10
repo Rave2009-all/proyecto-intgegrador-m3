@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jasperReport
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="ReporteLibros"
+    pageWidth="595"
+    pageHeight="842"
+    columnWidth="555"
+    leftMargin="20"
+    rightMargin="20"
+    topMargin="20"
+    bottomMargin="20">
+
+    <parameter name="titulo" class="java.lang.String"/>
+
+    <field name="id" class="java.lang.Long"/>
+    <field name="titulo" class="java.lang.String"/>
+    <field name="autor" class="java.lang.String"/>
+
+    <title>
+        <band height="60">
+
+            <staticText>
+                <reportElement x="0" y="10" width="555" height="30"/>
+                <textElement textAlignment="Center">
+                    <font size="20" isBold="true"/>
+                </textElement>
+                <text><![CDATA[BOOKLY - INFORME DE LIBROS]]></text>
+            </staticText>
+
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="30">
+
+            <staticText>
+                <reportElement x="0" y="0" width="80" height="25"/>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="90" y="0" width="220" height="25"/>
+                <text><![CDATA[TITULO]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="320" y="0" width="230" height="25"/>
+                <text><![CDATA[AUTOR]]></text>
+            </staticText>
+
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="25">
+
+            <textField>
+                <reportElement x="0" y="0" width="80" height="20"/>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="90" y="0" width="220" height="20"/>
+                <textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="320" y="0" width="230" height="20"/>
+                <textFieldExpression><![CDATA[$F{autor}]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </detail>
+
+</jasperReport>

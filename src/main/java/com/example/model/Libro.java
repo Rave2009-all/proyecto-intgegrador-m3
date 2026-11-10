@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "Libros")
@@ -16,6 +17,9 @@ public class Libro {
     private Long ID_Libro;
     private String Titulo;
     private String Autor;
+
+        @Column(length = 1000)
+    private String portada;
    
 
     @ManyToOne
@@ -83,6 +87,14 @@ public class Libro {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public String getPortada() {
+        return portada;
+    }
+
+    public void setPortada(String portada) {
+        this.portada = portada;
     }
 
     @Override
